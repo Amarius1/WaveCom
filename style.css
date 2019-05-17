@@ -1,3 +1,4 @@
+
 .white
 {
   color: white;
@@ -26,7 +27,7 @@ H1
    top: 100px;
    left: 50%;
    transform: translate(-50%, 0);
-
+   transition: all 0.3s;
 }
 .title [sub]
 {
@@ -53,6 +54,11 @@ main[main0]
   background-color: white;
   min-height: 100%;
   top: 100vh;
+  background-image: url("bkgill.png");
+  background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
 
 }
 .blur-buffer {
@@ -80,7 +86,7 @@ main[main0]
   border-radius: inherit;
   /* !importanté */
 
-  background-image: linear-gradient(to right top, #003381, #25318f, #422d9a, #5e21a2, #7b00a6);
+  background-image: linear-gradient(to right top, #182ad8, #5238e2, #7448eb, #9159f5, #ab6aff);
 }
 [card]
 {
@@ -107,6 +113,25 @@ main[main0]
     margin-top: -3px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .black
+  {
+    border-radius: 0px 0px 10px 10px !important;
+    padding: 0px 20px;
+  }
+  .white
+  {
+    border-radius: 10px 10px 0px 0px;
+  }
+  .title H1.black [icon]
+  {
+    display: none;
+  }
+  .example-flex:active
+  {
+    box-shadow: 0 16px 24px 2px rgba(0,0,100,0.14), 0 6px 30px 5px rgba(0,0,100,0.12), 0 8px 10px -5px rgba(0,0,100,0.20) !important;
+  }
+}
 .gradient-box .outlined
 {
   border-width: 1.5px !important;
@@ -114,4 +139,89 @@ main[main0]
   background-clip: padding-box;
   border-color: var(--accent) !important;
   margin-right: 5px;
+}
+
+
+
+
+
+
+.blur
+{
+  filter: blur(5px);
+ -webkit-filter: blur(5px);
+ transition: all 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
