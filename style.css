@@ -1,0 +1,117 @@
+.white
+{
+  color: white;
+  background-color: black;
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 7px;
+}
+.black
+{
+  color: black;
+  background-color: white;
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 8px;
+}
+H1
+{
+  display: inline-block;
+  margin: 0px;
+}
+.title
+{
+   text-align: center;
+   display: block;
+   margin-top: 20vh;
+   position: fixed;
+   top: 100px;
+   left: 50%;
+   transform: translate(-50%, 0);
+
+}
+.title [sub]
+{
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
+  position: relative;
+  top: 4px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.title H1.black [icon]
+{
+  font-size: 46px;
+  vertical-align: middle;
+  margin-bottom: 16px;
+  margin-left: 4px;
+  margin-right: 3px;
+}
+main[main0]
+{
+  z-index: 9999 !important;
+  position: relative;
+  background-color: white;
+  min-height: 100%;
+  top: 100vh;
+
+}
+.blur-buffer {
+    height: 1000px;
+    display: none;
+}
+
+.gradient-box {
+  box-sizing: border-box;
+  background-clip: padding-box;
+  border: solid 3px transparent;
+  border-radius: 8px;
+
+}
+.gradient-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  /* !importanté */
+  border-radius: inherit;
+  /* !importanté */
+
+  background-image: linear-gradient(to right top, #003381, #25318f, #422d9a, #5e21a2, #7b00a6);
+}
+[card]
+{
+  transition: all 0.3s !important;
+}
+@media not all and (pointer: coarse) {
+  .gradient-box:hover
+  {
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.20) !important;
+  }
+  .example-flex:hover
+  {
+    min-height: 480px;
+    transition: all 0.2s;
+  }
+  #plans.example-flex:hover
+  {
+    margin-right: 20px;
+    margin-top: -3px;
+  }
+  #phones.example-flex:hover
+  {
+    margin-left: 20px;
+    margin-top: -3px;
+  }
+}
+.gradient-box .outlined
+{
+  border-width: 1.5px !important;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  border-color: var(--accent) !important;
+  margin-right: 5px;
+}
